@@ -1,12 +1,12 @@
 const Validator = require("validator");
-const _ = require("lodash");
+const isEmpty = require("is-empty");
 
 module.exports = function validateLoginInput(data) {
   let errors = {};
 
 // Convert empty fields to an empty string so we can use validator functions
-  data.email = !_.isEmpty(data.email) ? data.email : "";
-  data.password = !_.isEmpty(data.password) ? data.password : "";
+  data.email = !isEmpty(data.email) ? data.email : "";
+  data.password = !isEmpty(data.password) ? data.password : "";
 
 // Email checks
   if (Validator.isEmpty(data.email)) {
@@ -22,6 +22,6 @@ module.exports = function validateLoginInput(data) {
 
 return {
     errors,
-    isValid: _.isEmpty(errors)
+    isValid: isEmpty(errors)
   };
 };
