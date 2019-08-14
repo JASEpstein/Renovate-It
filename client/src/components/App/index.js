@@ -12,7 +12,7 @@ import Login from '../Login/index';
 import Register from '../Register/index';
 
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "../../store";
 
 
 class App extends Component {
