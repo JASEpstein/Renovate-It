@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import 'materialize-css/dist/css/materialize.min.css';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -14,21 +15,19 @@ class Dashboard extends Component {
     
     return (
         <div>
-            {console.log(this.props)}
             <ul id="slide-out" className="sidenav sidenav-fixed" style={{ marginTop: "4.29rem"}}>
                 <li>
                     <div className="user-view">
                         <img className="circle responsive-img" src="../../img/Spock.jpg" alt=""/>
-                        <a href="#name"><span className="black-text name">{user.name.split(" ")[0]}</span></a>
-                        <a href="#email"><span className="black-text email">livelongandprosper@starfleet.com</span></a>
+                        <span className="black-text name">{user.name.split(" ")[0]}</span>
+                        <span className="black-text email">{user.email}</span>
                     </div>
                 </li>
                 <li><div className="divider"></div></li>
-                <li><a className="waves-effect" href="#!"><i className="material-icons">format_paint</i>Renovation Calculator</a></li>
-                <div className="divider"></div>
-                <li><a className="waves-effect" href="#!"><i className="material-icons">attach_money</i>Amortization Schedule</a></li>
-                <li><div className="divider"></div></li>
-                <li><a className="waves-effect" href="#!"><i className="material-icons">local_library</i>Learning Center</a></li>
+                <li><a data-target="slide-out" className="waves-effect sidenav-trigger" href="#!"><i className="material-icons">person</i>Account Details</a></li>
+                <li><a data-target="slide-out" className="waves-effect sidenav-trigger" href="#!"><i className="material-icons">format_paint</i>Saved Renovations</a></li>
+                <li><a data-target="slide-out" className="waves-effect sidenav-trigger" href="#!"><i className="material-icons">attach_money</i>Amortization Schedule</a></li>
+                <li><a data-target="slide-out" className="waves-effect sidenav-trigger" href="#!"><i className="material-icons">local_library</i>Learning Center</a></li>
             </ul>
             {/* <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a> */}
         </div>

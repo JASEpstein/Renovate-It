@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import '@material-ui/core';
 import '@material-ui/icons';
-import M from 'materialize-css';
+// import M from 'materialize-css';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../../utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../../actions/authActions";
@@ -39,9 +39,7 @@ class App extends Component {
   //State
   
   //Functions
-  componentDidMount() {
-    M.AutoInit();
-  }
+
   //Render
   render() {
     const App = () => (
