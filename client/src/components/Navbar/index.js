@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 
-// import LoginDropdown from "./LoginDropdown"
+import AuthDropdown from "./AuthDropdown"
 class Navbar extends Component {
   componentDidMount() {
     //Makes the dropdown go below the trigger button
@@ -26,16 +26,7 @@ class Navbar extends Component {
       <nav className="blue accent-3">
         <div className="nav-wrapper">
           <a href="/" className="brand-logo" style={{ marginLeft: "1rem"}}>RenovateIt!</a>
-          {this.props.auth.isAuthenticated ? (
-            <ul id="nav-mobile" className="right hide-on-med-and-down dropdown-trigger" data-target="auth-dropdown">
-              <li className="" ><a href="#!"><i className="large material-icons">account_circle</i></a></li>
-            </ul>
-          ):(
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li><a href="/login">Login</a></li>
-              <li><a href="/register">Sign Up</a></li>
-            </ul>
-          )}
+          <AuthDropdown/>
         </div>
       </nav>
 
