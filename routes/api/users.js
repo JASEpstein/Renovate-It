@@ -63,7 +63,7 @@ const { errors, isValid } = validateLoginInput(req.body);
   }
 
 const email = req.body.email;
-  const password = req.body.password;
+const password = req.body.password;
 
 // Find user by email
   User.findOne({ email }).then(user => {
