@@ -30,8 +30,8 @@ class AuthDropdown extends Component {
               </ul>
 
               <ul id="auth-dropdown" className="dropdown-content">
-                <li><a href="/dashboard" className="blue-text text-accent-3">Account</a></li>
-                <li><a href="/" onClick={this.onLogoutClick} className="blue-text text-accent-3">Logout</a></li>
+                <li><a href="/dashboard" className="blue-text text-accent-3"><i className="large material-icons">person</i>Account</a></li>
+                <li><a href="/" onClick={this.onLogoutClick} className="blue-text text-accent-3"><i className="large material-icons">exit_to_app</i>Logout</a></li>
               </ul>
             </Fragment>
           ):(
