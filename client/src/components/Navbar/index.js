@@ -1,58 +1,16 @@
-import React, { Component } from 'react';
-import M from 'materialize-css';
-import '@material-ui/icons';
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { logoutUser } from "../../actions/authActions";
+import React from 'react';
 
 import AuthDropdown from "./AuthDropdown"
-class Navbar extends Component {
-  componentDidMount() {
-    //Makes the dropdown go below the trigger button
-    let trigger = document.querySelectorAll(".dropdown-trigger");
-    M.Dropdown.init(trigger, {
-      coverTrigger: false,
-    });
-  }
 
-  onLogoutClick = e => {
-    e.preventDefault();
-    this.props.logoutUser();
-  };
-
-  render() {
+export default function Navbar() {
     return (
     <div id='navbar'>
       <nav className="blue accent-3">
         <div className="nav-wrapper">
-          <a href="/" className="brand-logo" style={{ marginLeft: "1rem"}}>RenovateIt!</a>
+          <a href="/" className="brand-logo" style={{ marginLeft: "1rem"}}><i className="large material-icons">format_paint</i>HomeTools</a>
           <AuthDropdown/>
         </div>
       </nav>
-
-      <ul id="auth-dropdown" className="dropdown-content">
-        <li><a href="/dashboard" className="blue-text text-accent-3">Dashboard</a></li>
-        <li><a href="/" onClick={this.onLogoutClick} className="blue-text text-accent-3">Logout</a></li>
-      </ul>
-      
-      
-
-
     </div>
-    
-    
-    )
-  }
-    
+    )   
 }
-
-Navbar.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(mapStateToProps, { logoutUser })(Navbar);

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
 import 'materialize-css/dist/css/materialize.min.css';
 
 class Dashboard extends Component {
@@ -15,11 +14,11 @@ class Dashboard extends Component {
     
     return (
         <div>
-            <ul id="slide-out" className="sidenav sidenav-fixed" style={{ marginTop: "4.29rem"}}>
+            <ul id="slide-out" className="sidenav sidenav-fixed" style={{ marginTop: "4.3rem"}}>
                 <li>
                     <div className="user-view">
-                        <img className="circle responsive-img" src="../../img/Spock.jpg" alt=""/>
-                        <span className="black-text name">{user.name.split(" ")[0]}</span>
+                        <img className="circle responsive-img" src={require("../../img/Spock.jpg")} alt=""/>
+                        <span className="black-text name">{user.name}</span>
                         <span className="black-text email">{user.email}</span>
                     </div>
                 </li>
@@ -29,14 +28,12 @@ class Dashboard extends Component {
                 <li><a data-target="slide-out" className="waves-effect sidenav-trigger" href="#!"><i className="material-icons">attach_money</i>Amortization Schedule</a></li>
                 <li><a data-target="slide-out" className="waves-effect sidenav-trigger" href="#!"><i className="material-icons">local_library</i>Learning Center</a></li>
             </ul>
-            {/* <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a> */}
         </div>
           );
   }
 }
 
 Dashboard.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 
@@ -45,8 +42,7 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps,
-  { logoutUser }
+  mapStateToProps
 )(Dashboard);
 
 {/* <div style={{ height: "75vh" }} className="container valign-wrapper">
