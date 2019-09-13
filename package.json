@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
+  "homepage": "https://renomaybe.herokuapp.com",
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
