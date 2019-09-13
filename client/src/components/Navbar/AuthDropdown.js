@@ -40,8 +40,6 @@ class AuthDropdown extends Component {
               <li><a href="/register">Sign Up</a></li>
             </ul>
           )}
-
-          
         </Fragment>
           
       )
