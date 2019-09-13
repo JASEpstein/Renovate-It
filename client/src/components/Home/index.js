@@ -22,7 +22,9 @@ const FlexContainerSub = styled.div`
 `
 const FlexContainerBtns = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 0 12rem;
   margin-top: 5rem;
 `
 
@@ -49,8 +51,8 @@ class Home extends Component {
             <HeroTitle>HomeTools</HeroTitle>
           </FlexContainerHead>
           <FlexContainerSub>
-            <HeroSubHead>Calculate.</HeroSubHead>
             <HeroSubHead>Renovate.</HeroSubHead>
+            <HeroSubHead>Calculate.</HeroSubHead>
             <HeroSubHead>Coordinate.</HeroSubHead>
           </FlexContainerSub>
           <FlexContainerBtns>
