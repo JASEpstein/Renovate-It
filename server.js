@@ -43,12 +43,14 @@ app.use(express.static(path.join(__dirname, '/client/build')));
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/public/index.html'));
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 //dotenv.config();
 
 const port = process.env.PORT || 5000;
+
+console.log(process.env);
 
 app.listen(port, () => console.log(`App is listening on port ${port} !`));
 
