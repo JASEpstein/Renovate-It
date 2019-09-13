@@ -36,7 +36,7 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'client/public')));
+app.use(express.static(path.join(__dirname, '/client/public')));
 
 // An api endpoint that returns a short list of items
 //app.get(APIroutes);
