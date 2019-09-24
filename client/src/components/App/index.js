@@ -13,6 +13,7 @@ import Login from '../Login/index';
 import Register from '../Register/index';
 import PrivateRoute from "../Private-Route/PrivateRoute";
 import Dashboard from "../Dashboard/Dashboard";
+import Renovate from "../Renovate/Renovate";
 
 import { Provider } from "react-redux";
 import store from "../../store";
@@ -37,7 +38,7 @@ if (localStorage.jwtToken) {
 
 class App extends Component {
   //State
-  
+  state = {}
   //Functions
 
   //Render
@@ -49,6 +50,7 @@ class App extends Component {
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Switch>
+          <PrivateRoute exact path="/renovate" component={Renovate}/>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </Switch>
        </div>
